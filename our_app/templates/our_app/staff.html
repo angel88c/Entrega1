@@ -10,10 +10,12 @@
 <br>
 <div class="mx-auto" style="width: 200px;">
     <form action="{% url 'staff' %}" method="POST"> {% csrf_token %}
-        <table>
+        <table class="table">
             {{ formulario.as_table }}
         </table>
-        <input type="submit" value="Enviar">
+        <input class="btn btn-primary btn-xs" type="submit" value="Enviar">
+        <br>
+        <br>
     </form>
 </div>
 {% endblock %}

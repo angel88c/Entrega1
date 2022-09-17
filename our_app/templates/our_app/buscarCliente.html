@@ -1,0 +1,20 @@
+{% extends 'our_app/padre.html' %}
+
+{% load static %}
+
+{%block titulo%}
+<h1 class="mb-5">Formulario para buscar Clientes.</h1>
+{% endblock %}
+
+{% block contenido_que_cambia  %}
+<br>
+<div class="mx-auto" style="width: 200px;">
+    <form action="{% url 'find' %}" method="GET"> {% csrf_token %}
+        <input class="form-control" placeholder="Ingrese nombre a buscar"  type="nombre" name="nombre" id="nombre">
+        <br>
+        <br>
+        <input class="btn btn-primary btn-xs" type="submit" value="Buscar Clientes">
+    </form>
+</div>
+<h3 style="color:red">{{ mensaje }}</h3>
+{% endblock %}

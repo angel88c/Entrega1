@@ -1,0 +1,34 @@
+{% extends 'our_app/padre.html' %}
+
+{% load static %}
+
+{%block titulo%}
+<h1 class="mb-5">Resultados de búsqueda</h1>
+{% endblock %}
+
+{% block contenido_que_cambia  %}
+<h1>Busqueda de clientes </h1>
+{% if clientes %}
+
+<div class="mx-auto" style="width: 800px">
+    <table class="table table-stripped">
+        <thead>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.apellido}}</td>
+                <td>{{cliente.email}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p style="color: red">no se encontraron clientes con el nombre ingresado.</p>
+{% endif %}
+{% endblock %}

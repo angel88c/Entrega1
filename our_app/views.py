@@ -75,3 +75,16 @@ def envios(request):
         return render(request, 'our_app/envios.html', {'formulario': formulario})
 
 """Busquedas"""
+def buscarCliente(request):
+    return render(request, 'our_app/buscarCliente.html')
+
+def find(request):
+    nombre = request.GET["nombre"]
+
+    if nombre:
+        clientes = Cliente.objects.filter(nombre__contains=nombre)
+
+        return render(request, "our_app/resultadosBuscarCliente.html", {"clientes": clientes})
+    else:
+        mensaje = f"Por favor ingrese un nombre de cliente."
+        return render(request, "our_app/buscarCliente.html", {"mensaje": mensaje})

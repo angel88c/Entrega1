@@ -7,6 +7,6 @@ urlpatterns = [
     path('ropas/', ropas, name='ropas'),
     path('staff/', staff, name='staff'),
     path('envios/', envios, name='envios'),
-   # path('busquedaComision/', busquedaComision, name="busquedaComision"),
-   # path('buscar/', buscar, name="buscar"),
+    path('buscarCliente/', buscarCliente, name="buscarCliente"),
+    path('buscar/', find, name="find"),
 ]
